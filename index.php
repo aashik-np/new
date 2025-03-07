@@ -1,47 +1,48 @@
-<?php
-
-
-session_start();
-include('connection.php');
-
-if (isset($_POST['login'])) {
-    $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $password = mysqli_real_escape_string($conn, $_POST['password']);
-
-    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-    $result = mysqli_query($conn, $query);
-
-    if (mysqli_num_rows($result) == 1) {
-        $_SESSION['loggedin'] = true;
-        header("Location: home.php");
-        exit;
-    } else {
-        $error = "Invalid username or password!";
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
-?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .container { width: 300px; margin: 100px auto; }
-        input { margin: 10px 0; padding: 8px; width: 100%; }
-        button { padding: 10px; background: #4CAF50; color: white; border: none; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h2>School Login</h2>
-        <?php if (isset($error)) echo "<p style='color:red'>$error</p>"; ?>
-        <form method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" name="login">Login</button>
-        </form>
-        <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
-    </div>
-</body>
-</html>
+header {
+    background-color: #6a1b9a;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+section {
+    padding: 20px;
+}
+
+.directors {
+    display: flex;
+    justify-content: space-around;
+}
+
+.director {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+footer {
+    background-color: #6a1b9a;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
