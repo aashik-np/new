@@ -1,25 +1,71 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login</title>
-    <style>
-        body { font-family: Arial, sans-serif; }
-        .container { width: 300px; margin: 100px auto; }
-        input { margin: 10px 0; padding: 8px; width: 100%; }
-        button { padding: 10px; background: #4CAF50; color: white; border: none; }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canary Wine</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h2>School Login</h2>
-        <?php if (isset($error)) echo "<p style='color:red'>$error</p>"; ?>
-        <form method="POST">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit" name="login">Login</button>
+    <header>
+        <h1>Canary Wine</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#wines">Wines</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h2>Welcome to Canary Wine</h2>
+        <p>Your premier destination for exquisite wines.</p>
+        <h3>Meet Our Directors</h3>
+        <div class="directors">
+            <div class="director">
+                <h4>Atmaram Subedi</h4>
+                <p>Director of Operations</p>
+            </div>
+            <div class="director">
+                <h4>Narendra Timilsina</h4>
+                <p>Director of Marketing</p>
+            </div>
+            <div class="director">
+                <h4>Ram Malla</h4>
+                <p>Director of Production</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Canary Wine is dedicated to producing the finest wines...</p>
+    </section>
+
+    <section id="wines">
+        <h2>Our Wines</h2>
+        <p>Explore our selection of premium wines...</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
         </form>
-        <p>Don't have an account? <a href="signup.php">Sign Up</a></p>
-    </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Canary Wine. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
